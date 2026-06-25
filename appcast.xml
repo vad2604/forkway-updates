@@ -1,0 +1,51 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>Forkway</title>
+        <item>
+            <title>1.0.4</title>
+            <pubDate>Thu, 25 Jun 2026 11:35:09 +0000</pubDate>
+            <sparkle:version>13</sparkle:version>
+            <sparkle:shortVersionString>1.0.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description sparkle:format="markdown"><![CDATA[## Forkway 1.0.4
+
+Обновления редактора правил, Sparkle и DNS-only режим.
+
+### Установка
+
+1. Скачайте `Forkway-1.0.4-macos-<arch>.dmg` и `*.sha256`
+2. Проверьте checksum: `shasum -a 256 -c Forkway-1.0.4-macos-arm64.dmg.sha256`
+3. Перетащите **Forkway** в **Applications**
+4. Запустите Forkway (иконка в **menu bar**, не в Dock)
+5. **Import AWG from Amnezia…** → подключите CheckPoint → **Start**
+
+### Ad-hoc / без Apple Developer ID
+
+```bash
+xattr -cr /Applications/Forkway.app
+/Applications/Forkway.app/Contents/MacOS/ForkwayApp
+```
+
+При первом запуске Sparkle спросит разрешение на автоматические проверки обновлений.
+
+### Что нового
+
+- **Sparkle**: проверка обновлений при запуске, пункт **Check for Updates…** в меню
+- **DNS-only**: переключатель **AWG** над Start (без AWG/sing-box, только dnsproxy)
+- **Редактор правил**: русский UI, бейджи политик, live-тест домена, drag-and-drop, импорт/экспорт
+- CLI: `forkway start --dns-only`
+
+### Диагностика
+
+```bash
+tail -f ~/.config/forklift/run/forkway-ui.log
+```
+
+Полная документация: [README.md](README.md) · [DISTRIBUTION.md](docs/DISTRIBUTION.md)
+]]></description>
+            <enclosure url="https://vad2604.github.io/forkway-updates/releases/v1.0.4/Forkway-1.0.4-macos-arm64.zip" length="26520668" type="application/octet-stream" sparkle:edSignature="yXLCljMnVX96LaAHNJgE726By3VHFW0bZvQxGimoPmYvUs4t29frjUVZ6QeGWx6xdJ91AvJAjPnF8FneY1/JDg=="/>
+        </item>
+    </channel>
+</rss>
