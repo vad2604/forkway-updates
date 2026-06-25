@@ -32,11 +32,22 @@ shasum -a 256 -c Forkway-1.0.4-macos-arm64.dmg.sha256
 
 3. В menu bar появится иконка вилки (в Dock приложения нет).
 
+## Amnezia VPN (перед первым запуском)
+
+Forkway поднимает AmnesiaWG **сам** — из конфига, импортированного из бэкапа Amnezia.
+
+1. Откройте **Amnezia VPN** на Mac.
+2. **Настройки** → **Создать резервную копию** (backup серверов) → сохраните файл `.backup`.
+3. **Отключите VPN и закройте Amnezia** перед **Start** в Forkway.
+
+> **Важно:** пока Forkway в работе (**Start**), Amnezia должна быть **выключена** (не подключена и лучше полностью закрыта). Два VPN-клиента одновременно конфликтуют за маршруты и tun-интерфейсы.
+
 ## Первый запуск
 
-1. **Import AWG from Amnezia…** — импорт `.backup` из Amnezia VPN.
-2. Подключите **CheckPoint Endpoint Security** (корпоративный VPN).
-3. Нажмите **Start** — один раз введите пароль администратора (установка privileged helper).
+1. В Forkway: **Import AWG from Amnezia…** → выберите сохранённый `.backup` (при нескольких серверах выберите нужный).
+2. Убедитесь, что **Amnezia VPN отключена**.
+3. Подключите **CheckPoint Endpoint Security** (корпоративный VPN).
+4. Нажмите **Start** — один раз введите пароль администратора (установка privileged helper).
 
 Опционально: переключатель **AWG** над **Start** (только когда Forkway остановлен) — режим только DNS без AmnesiaWG.
 
@@ -68,7 +79,8 @@ tail -f ~/.config/forklift/run/forkway-ui.log
 |----------|-------------|
 | Двойной клик не запускает | `xattr -cr /Applications/Forkway.app`, запуск из Terminal (см. выше) |
 | Нет иконки в menu bar | Запущен ли процесс: `pgrep -l ForkwayApp` |
-| Start не поднимает маршрутизацию | CheckPoint подключён? AWG импортирован? |
+| Start не поднимает маршрутизацию | CheckPoint подключён? AWG импортирован? Amnezia выключена? |
+| Конфликт VPN / странные маршруты | Полностью выйдите из Amnezia, в Forkway **Stop** → **Start** |
 | После обновления сломалось | Quit → Start снова; при необходимости переустановить helper |
 
 ## Для разработчиков
