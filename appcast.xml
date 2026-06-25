@@ -3,23 +3,24 @@
     <channel>
         <title>Forkway</title>
         <item>
-            <title>1.0.4</title>
-            <pubDate>Thu, 25 Jun 2026 12:31:40 +0000</pubDate>
-            <sparkle:version>17</sparkle:version>
-            <sparkle:shortVersionString>1.0.4</sparkle:shortVersionString>
+            <title>1.0.5</title>
+            <pubDate>Thu, 25 Jun 2026 12:38:27 +0000</pubDate>
+            <sparkle:version>14</sparkle:version>
+            <sparkle:shortVersionString>1.0.5</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description sparkle:format="markdown"><![CDATA[## Forkway 1.0.4
+            <description sparkle:format="markdown"><![CDATA[## Forkway 1.0.5
 
-Обновления редактора правил, Sparkle и DNS-only режим.
+Исправление helper, приватные defaults при сборке, публичная инструкция по установке.
 
 ### Установка
 
-1. Скачайте `Forkway-1.0.4-macos-<arch>.dmg` и `*.sha256`
-2. Проверьте checksum: `shasum -a 256 -c Forkway-1.0.4-macos-arm64.dmg.sha256`
+1. Скачайте [DMG](https://vad2604.github.io/forkway-updates/releases/v1.0.5/Forkway-1.0.5-macos-arm64.dmg) и [SHA256](https://vad2604.github.io/forkway-updates/releases/v1.0.5/Forkway-1.0.5-macos-arm64.dmg.sha256)
+2. Проверьте checksum: `shasum -a 256 -c Forkway-1.0.5-macos-arm64.dmg.sha256`
 3. Перетащите **Forkway** в **Applications**
 4. Запустите Forkway (иконка в **menu bar**, не в Dock)
-5. **Import AWG from Amnezia…** → подключите CheckPoint → **Start**
+5. В **Amnezia VPN**: **Настройки** → **Создать резервную копию** → в Forkway **Import AWG from Amnezia…** (Amnezia **выключена** во время работы Forkway)
+6. Подключите CheckPoint → **Start**
 
 ### Ad-hoc / без Apple Developer ID
 
@@ -28,24 +29,23 @@ xattr -cr /Applications/Forkway.app
 /Applications/Forkway.app/Contents/MacOS/ForkwayApp
 ```
 
-При первом запуске Sparkle спросит разрешение на автоматические проверки обновлений.
-
 ### Что нового
 
-- **Sparkle**: проверка обновлений при запуске, пункт **Check for Updates…** в меню
-- **DNS-only**: переключатель **AWG** над Start (без AWG/sing-box, только dnsproxy)
-- **Редактор правил**: русский UI, бейджи политик, live-тест домена, drag-and-drop, импорт/экспорт
-- CLI: `forkway start --dns-only`
+- **Helper**: автообновление при `unknown command: start-dns-only`; перезапуск legacy helper после обновления приложения
+- **Сборка**: корпоративные домены/IP вшиваются из `packaging/seed-rules.json` (base64), не в исходниках
+- **Раздача**: DMG и инструкция на https://vad2604.github.io/forkway-updates/
 
-### Диагностика
+### Обновление с 1.0.4
+
+**Check for Updates…** или новый DMG → **Start** (пароль admin один раз). При ошибке helper:
 
 ```bash
-tail -f ~/.config/forklift/run/forkway-ui.log
+sudo launchctl kickstart -k system/com.forkway.helper
 ```
 
-Полная документация: [README.md](README.md) · [DISTRIBUTION.md](docs/DISTRIBUTION.md)
+Полная инструкция: [docs/INSTALL.md](INSTALL.md)
 ]]></description>
-            <enclosure url="https://vad2604.github.io/forkway-updates/releases/v1.0.4/Forkway-1.0.4-macos-arm64.zip" length="31538642" type="application/octet-stream" sparkle:edSignature="aq5+ruSWQ1LIamQ23DkP5hMbI3BkUSxo1E/DC+DnabWyp9nl7zL5njuRtrjDgYROv2m52ffIkJDOjI6Bzk3fBg=="/>
+            <enclosure url="https://vad2604.github.io/forkway-updates/releases/v1.0.5/Forkway-1.0.5-macos-arm64.zip" length="26522241" type="application/octet-stream" sparkle:edSignature="zzSE6O/2+t1AKRbtlFa6dLlHSh8RVqXunTxLlZYUscGGxua2VEKQRyjFzXypkNAgCMN8HpgVZia1ARsX3q/eCQ=="/>
         </item>
     </channel>
 </rss>

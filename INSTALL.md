@@ -6,16 +6,16 @@
 
 | Файл | Ссылка |
 |------|--------|
-| DMG (установщик) | [Forkway-1.0.4-macos-arm64.dmg](https://vad2604.github.io/forkway-updates/releases/v1.0.4/Forkway-1.0.4-macos-arm64.dmg) |
-| Контрольная сумма | [Forkway-1.0.4-macos-arm64.dmg.sha256](https://vad2604.github.io/forkway-updates/releases/v1.0.4/Forkway-1.0.4-macos-arm64.dmg.sha256) |
+| DMG (установщик) | [Forkway-1.0.5-macos-arm64.dmg](https://vad2604.github.io/forkway-updates/releases/v1.0.5/Forkway-1.0.5-macos-arm64.dmg) |
+| Контрольная сумма | [Forkway-1.0.5-macos-arm64.dmg.sha256](https://vad2604.github.io/forkway-updates/releases/v1.0.5/Forkway-1.0.5-macos-arm64.dmg.sha256) |
 
 Проверка целостности (рекомендуется):
 
 ```bash
 cd ~/Downloads
-curl -LO https://vad2604.github.io/forkway-updates/releases/v1.0.4/Forkway-1.0.4-macos-arm64.dmg.sha256
-curl -LO https://vad2604.github.io/forkway-updates/releases/v1.0.4/Forkway-1.0.4-macos-arm64.dmg
-shasum -a 256 -c Forkway-1.0.4-macos-arm64.dmg.sha256
+curl -LO https://vad2604.github.io/forkway-updates/releases/v1.0.5/Forkway-1.0.5-macos-arm64.dmg.sha256
+curl -LO https://vad2604.github.io/forkway-updates/releases/v1.0.5/Forkway-1.0.5-macos-arm64.dmg
+shasum -a 256 -c Forkway-1.0.5-macos-arm64.dmg.sha256
 ```
 
 ## Установка
@@ -78,7 +78,7 @@ Feed: https://vad2604.github.io/forkway-updates/appcast.xml
 
    После этого **Start** в Forkway снова установит helper.
 
-> Нужна версия приложения **не старее 1.0.4 (build 16+)** — в ней исправлено автообновление helper.
+> Нужна версия приложения **1.0.5+** — в ней исправлено автообновление helper.
 
 ## Удаление
 
