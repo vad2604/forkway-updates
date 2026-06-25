@@ -4,8 +4,8 @@
         <title>Forkway</title>
         <item>
             <title>1.0.4</title>
-            <pubDate>Thu, 25 Jun 2026 11:59:14 +0000</pubDate>
-            <sparkle:version>15</sparkle:version>
+            <pubDate>Thu, 25 Jun 2026 12:31:40 +0000</pubDate>
+            <sparkle:version>17</sparkle:version>
             <sparkle:shortVersionString>1.0.4</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
@@ -45,7 +45,7 @@ tail -f ~/.config/forklift/run/forkway-ui.log
 
 Полная документация: [README.md](README.md) · [DISTRIBUTION.md](docs/DISTRIBUTION.md)
 ]]></description>
-            <enclosure url="https://vad2604.github.io/forkway-updates/releases/v1.0.4/Forkway-1.0.4-macos-arm64.zip" length="31537131" type="application/octet-stream" sparkle:edSignature="eiCzO/TSfyaIxdgQIJ6xaeFC0Wmwe1NkbyoNm+Zjff+y31Qqmu2+bgtJa12tY9PA9Sn9jeJN9hEGcf/NxOJNAw=="/>
+            <enclosure url="https://vad2604.github.io/forkway-updates/releases/v1.0.4/Forkway-1.0.4-macos-arm64.zip" length="31538642" type="application/octet-stream" sparkle:edSignature="aq5+ruSWQ1LIamQ23DkP5hMbI3BkUSxo1E/DC+DnabWyp9nl7zL5njuRtrjDgYROv2m52ffIkJDOjI6Bzk3fBg=="/>
         </item>
     </channel>
 </rss>
