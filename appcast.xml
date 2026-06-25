@@ -4,8 +4,8 @@
         <title>Forkway</title>
         <item>
             <title>1.0.5</title>
-            <pubDate>Thu, 25 Jun 2026 12:38:27 +0000</pubDate>
-            <sparkle:version>14</sparkle:version>
+            <pubDate>Thu, 25 Jun 2026 12:38:45 +0000</pubDate>
+            <sparkle:version>18</sparkle:version>
             <sparkle:shortVersionString>1.0.5</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
@@ -45,7 +45,7 @@ sudo launchctl kickstart -k system/com.forkway.helper
 
 Полная инструкция: [docs/INSTALL.md](INSTALL.md)
 ]]></description>
-            <enclosure url="https://vad2604.github.io/forkway-updates/releases/v1.0.5/Forkway-1.0.5-macos-arm64.zip" length="26522241" type="application/octet-stream" sparkle:edSignature="zzSE6O/2+t1AKRbtlFa6dLlHSh8RVqXunTxLlZYUscGGxua2VEKQRyjFzXypkNAgCMN8HpgVZia1ARsX3q/eCQ=="/>
+            <enclosure url="https://vad2604.github.io/forkway-updates/releases/v1.0.5/Forkway-1.0.5-macos-arm64.zip" length="31538643" type="application/octet-stream" sparkle:edSignature="7f9M8+wWVph6GkhjHj/JYWQGugAcsaujCodYqI7ujDpq9mOU/Ajw1BSNLdNwazlEMwKd0xSwjK5IFXB+pj0xDA=="/>
         </item>
     </channel>
 </rss>
