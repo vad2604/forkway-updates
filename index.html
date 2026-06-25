@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forkway — установка</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.5; max-width: 42rem; margin: 2rem auto; padding: 0 1rem; }
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.15rem; margin-top: 1.75rem; }
+    code, pre { font-size: 0.9rem; background: rgba(127,127,127,.15); border-radius: 6px; }
+    code { padding: .15rem .35rem; }
+    pre { padding: .75rem 1rem; overflow-x: auto; }
+    a { color: #0969da; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { text-align: left; padding: .4rem .6rem; border-bottom: 1px solid rgba(127,127,127,.25); }
+    .btn { display: inline-block; margin: .5rem 0; padding: .55rem 1rem; background: #0969da; color: #fff !important; text-decoration: none; border-radius: 8px; font-weight: 600; }
+    .btn:hover { background: #0550ae; }
+  </style>
+</head>
+<body>
+  <h1>Forkway</h1>
+  <p>Menu bar-приложение для split-маршрутизации: CheckPoint SNX, AmnesiaWG, sing-box.</p>
+  <p><strong>macOS 14+</strong>, Apple Silicon (arm64).</p>
+
+  <p>
+    <a class="btn" href="releases/v1.0.4/Forkway-1.0.4-macos-arm64.dmg">Скачать DMG (1.0.4)</a>
+    <a href="releases/v1.0.4/Forkway-1.0.4-macos-arm64.dmg.sha256">SHA256</a>
+  </p>
+
+  <h2>Установка</h2>
+  <ol>
+    <li>Откройте DMG → перетащите <strong>Forkway</strong> в <strong>Applications</strong>.</li>
+    <li>В Terminal:
+      <pre>xattr -cr /Applications/Forkway.app
+/Applications/Forkway.app/Contents/MacOS/ForkwayApp</pre>
+    </li>
+    <li>Иконка появится в <strong>menu bar</strong> (не в Dock).</li>
+  </ol>
+
+  <h2>Первый запуск</h2>
+  <ol>
+    <li><strong>Import AWG from Amnezia…</strong></li>
+    <li>Подключите CheckPoint</li>
+    <li><strong>Start</strong> (пароль admin — один раз)</li>
+  </ol>
+
+  <h2>Обновления</h2>
+  <p>Автоматически через Sparkle. Вручную: меню Forkway → <strong>Check for Updates…</strong></p>
+
+  <h2>Проверка DMG</h2>
+  <pre>cd ~/Downloads
+curl -LO https://vad2604.github.io/forkway-updates/releases/v1.0.4/Forkway-1.0.4-macos-arm64.dmg.sha256
+curl -LO https://vad2604.github.io/forkway-updates/releases/v1.0.4/Forkway-1.0.4-macos-arm64.dmg
+shasum -a 256 -c Forkway-1.0.4-macos-arm64.dmg.sha256</pre>
+
+  <h2>Диагностика</h2>
+  <pre>tail -f ~/.config/forklift/run/forkway-ui.log</pre>
+
+  <p><small>Полная инструкция: <a href="INSTALL.md">INSTALL.md</a></small></p>
+</body>
+</html>
