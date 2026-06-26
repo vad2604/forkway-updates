@@ -3,49 +3,40 @@
     <channel>
         <title>Forkway</title>
         <item>
-            <title>1.0.5</title>
-            <pubDate>Thu, 25 Jun 2026 12:38:45 +0000</pubDate>
-            <sparkle:version>18</sparkle:version>
-            <sparkle:shortVersionString>1.0.5</sparkle:shortVersionString>
+            <title>1.0.6</title>
+            <pubDate>Fri, 26 Jun 2026 12:22:11 +0000</pubDate>
+            <sparkle:version>15</sparkle:version>
+            <sparkle:shortVersionString>1.0.6</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description sparkle:format="markdown"><![CDATA[## Forkway 1.0.5
+            <description sparkle:format="markdown"><![CDATA[## Forkway 1.0.6
 
-Исправление helper, приватные defaults при сборке, публичная инструкция по установке.
+### Для пользователей с CheckPoint (alfaintra и др.)
 
-### Установка
+1. Обновитесь через **Check for Updates…** или скачайте [DMG](https://vad2604.github.io/forkway-updates/releases/v1.0.6/Forkway-1.0.6-macos-arm64.dmg)
+2. **CheckPoint** должен быть подключён
+3. В Forkway: **Stop** → **Start** (один раз после обновления)
 
-1. Скачайте [DMG](https://vad2604.github.io/forkway-updates/releases/v1.0.5/Forkway-1.0.5-macos-arm64.dmg) и [SHA256](https://vad2604.github.io/forkway-updates/releases/v1.0.5/Forkway-1.0.5-macos-arm64.dmg.sha256)
-2. Проверьте checksum: `shasum -a 256 -c Forkway-1.0.5-macos-arm64.dmg.sha256`
-3. Перетащите **Forkway** в **Applications**
-4. Запустите Forkway (иконка в **menu bar**, не в Dock)
-5. В **Amnezia VPN**: **Настройки** → **Создать резервную копию** → в Forkway **Import AWG from Amnezia…** (Amnezia **выключена** во время работы Forkway)
-6. Подключите CheckPoint → **Start**
+Forkway автоматически:
 
-### Ad-hoc / без Apple Developer ID
+- сохранит корпоративный DNS (`10.x`) в `~/.config/forklift/settings.json`
+- добавит правила маршрутизации для search domains CheckPoint (например `.alfaintra.net`)
 
-```bash
-xattr -cr /Applications/Forkway.app
-/Applications/Forkway.app/Contents/MacOS/ForkwayApp
-```
-
-### Что нового
-
-- **Helper**: автообновление при `unknown command: start-dns-only`; перезапуск legacy helper после обновления приложения
-- **Сборка**: корпоративные домены/IP вшиваются из `packaging/seed-rules.json` (base64), не в исходниках
-- **Раздача**: DMG и инструкция на https://vad2604.github.io/forkway-updates/
-
-### Обновление с 1.0.4
-
-**Check for Updates…** или новый DMG → **Start** (пароль admin один раз). При ошибке helper:
+Проверка:
 
 ```bash
-sudo launchctl kickstart -k system/com.forkway.helper
+ps aux | grep '[d]nsproxy'
+dig owa.alfaintra.net @127.0.0.1 +time=3
 ```
 
-Полная инструкция: [docs/INSTALL.md](INSTALL.md)
+В `ps` должны быть строки `-u [/alfaintra.net/]10.x.x.x:53`, `dig` — ответ с внутренним IP, не SERVFAIL.
+
+### Изменения
+
+- Автоконфигурация corp DNS и правил из CheckPoint при Start
+- Исправлен отвал внутренних доменов через ~30 мин (dnsproxy без corp upstream после рестарта)
 ]]></description>
-            <enclosure url="https://vad2604.github.io/forkway-updates/releases/v1.0.5/Forkway-1.0.5-macos-arm64.zip" length="31538643" type="application/octet-stream" sparkle:edSignature="7f9M8+wWVph6GkhjHj/JYWQGugAcsaujCodYqI7ujDpq9mOU/Ajw1BSNLdNwazlEMwKd0xSwjK5IFXB+pj0xDA=="/>
+            <enclosure url="https://vad2604.github.io/forkway-updates/releases/v1.0.6/Forkway-1.0.6-macos-arm64.zip" length="26554611" type="application/octet-stream" sparkle:edSignature="O6ZKZRlYliSKRaHBLs2Ag3sdf99U1pw57utjuGdajqAfTnkGy02eN0Z5dev5tIS99Msn7YybIFg1lWYAVBHiCA=="/>
         </item>
     </channel>
 </rss>
